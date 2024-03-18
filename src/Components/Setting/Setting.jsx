@@ -1,9 +1,19 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
 function Setting() {
-  return <>setting</>;
+  return (
+    <>
+      <div
+        style={{
+          backgroundImage: `url("/public/third.jpg")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+        className={`w-full h-full bg-cover`}
+      ></div>
+    </>
+  );
 }
 
 export default Setting;

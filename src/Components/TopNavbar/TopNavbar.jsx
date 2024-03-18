@@ -39,7 +39,8 @@ function TopNavbar() {
 
   return (
     <nav
-      className={`w-full h-16 ${color.MaincolorTailwind}   flex items-center  justify-center `}
+      className={`w-full h-16 ${color.MaincolorTailwind} fixed
+       flex items-center  z-30 justify-center `}
     >
       <span
         className={`h-14 flex items-center justify-center w-auto px-2 ml-2 ${color.MaincolorTailwind}  rounded-md bg-white absolute left-0`}

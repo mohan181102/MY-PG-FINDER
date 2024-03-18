@@ -1,12 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Welcome.css";
 import { ReactTyped } from "react-typed";
 
 function Welcom() {
+  const [index, setindex] = useState(0);
+  const [indexstate, setindexstate] = useState(0);
+  const comment = [
+    {
+      name: "Easy to use",
+      comment:
+        "Easy to use and find hotel in enywhere, just search with location.",
+    },
+    {
+      name: "Secure & safe",
+      comment:
+        "Completely secure and safe pg/hotels. no fraud hotels/pg accept in our sites",
+    },
+    {
+      name: "Easy to communicate with owner",
+      comment:
+        "Easy for communicate with owner you have owners no. also you can chat.",
+    },
+  ];
+  const image = [
+    {
+      source: "/markus-spiske-g5ZIXjzRGds-unsplash.jpg",
+    },
+    {
+      source: "/marten-bjork-n_IKQDCyrG0-unsplash.jpg",
+    },
+    {
+      source: "/photo-1578683010236-d716f9a3f461.jpg",
+    },
+    {
+      source: "/photo-1512918728675-ed5a9ecdebfd.jpg",
+    },
+  ];
+
   return (
-    <div id="Welcompage">
-      <div id="underwelcom">
-        <h2 id="h2forwelcome">Welcome To</h2>
+    <div className=" min-w-full min-h-full max-h-max flex items-center flex-col">
+      <div
+        style={{
+          width: "100%",
+          height: "80vh",
+          backgroundPosition: "center",
+          objectFit: "cover",
+          backgroundSize: "cover",
+          backgroundImage: `url(${image[index + 1].source})`,
+        }}
+        className="overflow-scroll flex items-end justify-center"
+      >
+        <ul
+          onClick={(e) => console.log(e)}
+          className=" w-screen ml-2 h-2/4 flex items-center overflow-scroll pl-2 "
+        >
+          {comment.map((item, index) => {
+            return (
+              <>
+                <li
+                  key={index * 6}
+                  className={` text-gray-600 bg-transparent rounded-md 
+                     hover:scale-110 hover:opacity-100 opacity-30
+                  
+                   ml-4 transition-all delay-600 ease-out mr-2 p-2 pb-2 w-1/4 h-3/4 inline-block overflow-hidden cursor-default bg-white `}
+                >
+                  <h2
+                    className={`w-full h-1/4 text-gray-500 font-bold text-2xl flex items-center justify-start gap-2`}
+                  >
+                    <h3
+                      className={`w-[20%] h-full text-3xl text-white font-bold rounded-md flex items-center justify-center bg-green-600`}
+                    >
+                      {index + 1}
+                    </h3>
+                    {item.name}
+                  </h2>
+                  <p className={`w-full h-3/4 p-2 text-gray-500 text-xl`}>
+                    {item.comment}
+                  </p>
+                </li>
+              </>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="underwelcom w-full flex items-center justify-center flex-col">
+        <h2 className="h2forwelcome font-bold text-2xl text-gray-500 ">
+          Welcome To
+        </h2>
         <h1 id="h2forwelcometyped">
           <ReactTyped
             strings={["MY PG FINDER"]}
@@ -15,7 +95,7 @@ function Welcom() {
             loop
           />
         </h1>
-        <p id="paratext">
+        <p className=" w-full h-auto text-md text-gray-700 text-left pb-8">
           Welcome to MY PG FINDER, your go-to destination for finding the
           perfect PG (Paying Guest) accommodation tailored to students' needs!
           Whether you're a college freshman embarking on your educational
@@ -43,9 +123,10 @@ function Welcom() {
           ideal PG accommodation. Start your search today and embark on your
           academic journey with confidence and comfort!
         </p>
-        <h2 id="h2forbeni">Benifets of our website</h2>
+
+        {/* <h2 className="h2forbeni rounded-md h-40">Benifets of our website</h2>
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-1 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -56,8 +137,22 @@ function Welcom() {
             their smartphones.
           </p>
         </p>
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-2 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -66,8 +161,23 @@ function Welcom() {
             users to explore multiple options before making a decision.
           </p>
         </p>
+
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-3 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -77,8 +187,24 @@ function Welcom() {
             on their specific needs and preferences.
           </p>
         </p>
+
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />
+
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-4 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -88,8 +214,23 @@ function Welcom() {
             search based on criteria such as location, budget, and amenities
           </p>
         </p>
+
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-5 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -100,8 +241,23 @@ function Welcom() {
             potential issues.
           </p>
         </p>
+
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-6 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -111,8 +267,23 @@ function Welcom() {
             gender-specific accommodations, pet-friendly options).
           </p>
         </p>
+
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-7 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -121,8 +292,23 @@ function Welcom() {
             location.
           </p>
         </p>
+
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />
         <p className="pforbeni">
-          <div className="numbericon">
+          <div className="numbericon text-white">
             <i class="fa-solid fa-8 fa-2xl"></i>
           </div>
           <p className="pforunderbeini">
@@ -131,6 +317,21 @@ function Welcom() {
             expenses associated with traditional house-hunting methods
           </p>
         </p>
+
+        <img
+          src="public/third.jpg"
+          style={{
+            width: "100%",
+            height: "80vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            objectFit: "cover",
+            marginTop: "40px",
+            marginBottom: "40px",
+
+            borderRadius: "0.3rem",
+          }}
+        />*/}
       </div>
     </div>
   );

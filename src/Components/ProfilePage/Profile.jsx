@@ -5,42 +5,24 @@ import { useSelector } from "react-redux";
 
 function Profile() {
   const [email, setemail] = useState("sda");
-  
+
   const color = useSelector((state) => state.colors.userdata);
-
-  async function check() {
-    console.log("reache");
-    const res = await fetch("http://localhost:8006/register/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: "asass",
-      }),
-    });
-
-    console.log(res);
-  }
 
   // check();
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className={`w-3/4 h-full pb-20 fixed  overflow-scroll right-0 flex items-center justify-center bg-white flex-row  `}
+    <div
+      className={`w-[100vw] min-h-[100vh] pt-20  overflow-scroll flex items-center bg-white flex-col  `}
     >
       <div
         style={{
           backgroundImage: `url(
-            https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixid=M3w1MzU4MDd8MHwxfHNlYXJjaHwxMTh8fHVzZXIlMjB8ZW58MHx8fHwxNzA4NDMwMzk4fDA&ixlib=rb-4.0.3
+            "/markus-spiske-g5ZIXjzRGds-unsplash.jpg"
           )`,
           backgroundSize: "cover",
           objectFit: "cover",
           backgroundPosition: "center",
         }}
-        className={` w-full h-full pb-20 pt-10 overflow-scroll flex items-center justify-center flex-wrap   `}
+        className={`min-w-[100vw] min-h-[100vh] pb-20 pt-10 overflow-scroll flex items-center justify-center flex-wrap   `}
       >
         <div
           style={{
@@ -112,7 +94,7 @@ function Profile() {
           </tr>
         </table>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

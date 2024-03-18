@@ -55,7 +55,7 @@ function Payment() {
       initial={{ opacity: "0" }}
       animate={{ opacity: "1" }}
       exit={{ opacity: "0" }}
-      className={`w-auto  h-full  pt-4  overflow-scroll flex items-center justify-start bg-white flex-col `}
+      className={`w-full h-full pt-40  overflow-scroll flex items-center justify-center bg-white flex-col `}
     >
       <h2
         className={`w-3/4

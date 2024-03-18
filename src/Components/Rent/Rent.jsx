@@ -6,58 +6,54 @@ import HotelCard from "../Homepage/Hotelcard/HotelCard";
 
 function Rent() {
   const color = useSelector((state) => state.colors.userdata);
-  const [checkrent, setrent] = useState([1, 2, 4]);
+  const [checkrent, setrent] = useState([0, 6, 6, 6]);
+
   return (
-    <motion.div
-      initial={{ opacity: "0" }}
-      animate={{ opacity: "1" }}
-      exit={{ opacity: "0" }}
-      className={`rent w-3/4 h-full pb-20 fixed  overflow-scroll right-0 flex items-center justify-center  flex-row flex-wrap  `}
+    <div
+      style={{
+        backgroundImage: `url("/photo-1578683010236-d716f9a3f461.jpg")`,
+      }}
+      className={`w-screen h-full pt-40 bg-cover bg-center object-cover  overflow-scroll flex items-start justify-center flex-row flex-wrap `}
     >
       {checkrent != null ? (
         <h1
-          className={`w-5/6 flex justify-start items-center pl-10 text-3xl font-bold text-white   h-20 ${color.sidemainTailwind}`}
+          className={`w-5/6 flex justify-start items-center  pl-10 text-2xl font-bold text-white   h-16 ${color.sidemainTailwind}`}
         >
           Rented PG
         </h1>
-      ) : (
-        ""
-      )}
+      ) : null}
       {checkrent == null ? (
-        <h2>You haven't rented a PG</h2>
+        <div
+          className={`w-1/4 h-[40%] bg-white rounded-md flex items-center flex-col p-10 `}
+        >
+          <div
+            className={`w-full h-3/4 flex text-3xl items-center justify-center text-green-600`}
+          >
+            <i className="fa-solid fa-face-meh fa-2xl"></i>
+          </div>
+          <h2
+            className={`w-full h-1/4 text-green-600  text-2xl font-bold flex items-center justify-center`}
+          >
+            You haven't rented a PG
+          </h2>
+        </div>
       ) : (
         checkrent.map((item, index) => {
           return (
             <>
-              <motion.div
+              <div
                 key={index}
-                style={{
-                    backgroundImage:url
-                }}
                 className={`rentli w-1/4 h-52 border rounded-md border-spacing-1 m-4`}
               >
                 <div className={`hotelcard`}>
                   <HotelCard />
                 </div>
-                <div className={`hoverdiv ${color.sidemainTailwind} `}>
-                  <i
-                    className="fa-sharp fa-solid fa-house fa-2xl"
-                    style={{
-                      color: `${
-                        color.MaincolorTailwind == "bg-green-700"
-                          ? "green"
-                          : "black"
-                      }`,
-                    }}
-                  ></i>
-                  Date:- 26/11/2002
-                </div>
-              </motion.div>
+              </div>
             </>
           );
         })
       )}
-    </motion.div>
+    </div>
   );
 }
 

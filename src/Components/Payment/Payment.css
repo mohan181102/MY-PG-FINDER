@@ -1,0 +1,8 @@
+.req-input{
+    &::-webkit-input-placeholder{
+        color: green;
+    }
+    &>span{
+        color: aquamarine;
+    }
+}

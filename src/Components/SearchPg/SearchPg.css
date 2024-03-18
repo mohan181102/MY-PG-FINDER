@@ -1,0 +1,58 @@
+#checkin::after{
+    content: "Check in";
+    transition: all 200ms;
+    height: auto;
+    font-size: small;
+    background-color:  green;
+    position: relative;
+    color: white;
+    padding-left: 10px;
+    display: block;
+ 
+}
+
+/* FOR CHECK OUT */
+#checkout::after{
+    content: "Check out";
+    transition: all 200ms;
+    height: auto;
+    font-size: small;
+    background-color:  green;
+    position: relative;
+    color: white;
+    padding-left: 10px;
+    display: block;
+}
+
+/* select css */
+
+.heading{
+    animation-name: animatio;
+    animation-iteration-count: 1;
+    transition: all 300 ease;
+    animation-duration: 3s;
+}
+
+/* ANIMATION FOR HEADING */
+
+@keyframes animatio {
+    to{
+        transform: translateX(0);
+    }from{
+        transform: translateX(-100%);
+    }
+}
+.select{
+    width: 33.333333%;
+    height: 100%;
+    outline: none;
+    border: 2px solid green;
+}
+
+.option{
+    width: 100%;
+    height: auto;
+    border: 1px solid green;
+}
+
+ 

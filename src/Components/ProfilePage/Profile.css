@@ -11,10 +11,12 @@
 }
 
 .table{
-    width: 100%;
+    width: 80%;
     height: auto;
-     
+    margin-left: 10%;
+    margin-right: 10%; 
     margin-top: 0px;
+    margin-bottom: 40px;
     position: relative;
     top: 100px;
     /* border: 2px solid rgb(34 197 94); */
@@ -47,13 +49,12 @@ th{
     width: 20%;
 }
 
-.profilename{
+.profilename::after{
     height: 0px;
     display: none;
     transition: all  ease-in;
 }
 
-.profil
 .profilimg:hover .profilename{
     height: auto;
     display: block;

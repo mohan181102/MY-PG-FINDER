@@ -13,67 +13,50 @@ function BookPage({ image, hotelname, price, rating, location }) {
     { name: "Rating", data: "rating" },
     { name: "Location", data: "location" },
   ];
-  const [comment, setcomment] = useState(null);
-  const imagearray = [1, 2, 3, 3];
-  const navigate = useNavigate();
-  const arrayforcommment = [
+  const [comment, setcomment] = useState([
     {
-      username: "maxwell",
-      comment:
-        "My experience was wonderfool in here and i make wonderfool memories",
+      name: "maxwell",
+      comment: "dsdfafjdjfjkdshj",
     },
-  ];
-
-  if (comment == null) {
-    setcomment(arrayforcommment);
-  }
+  ]);
+  const imagearray = [1, 2, 3, 4, 4, 2, 3, 3];
+  const navigate = useNavigate();
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className={`w-3/4 h-full pb-40 fixed  overflow-scroll right-0 flex flex-wrap items-center justify-center bg-white flex-row `}
+    <div
+      className={` min-w-full max-w-max h-full pb-40 fixed  overflow-scroll  flex flex-wrap items-center justify-center gap-10 bg-white flex-row `}
     >
       <img
-        className={`imgforbook w-full h-3/4 mb-3`}
+        className={`imgforbook w-full h-3/4 bg-cover object-cover bg-center`}
         src={`https://images.unsplash.com/photo-1682688759157-57988e10ffa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MzU4MDd8MXwxfGFsbHwxfHx8fHx8Mnx8MTcwNzM2NTg3N3w&ixlib=rb-4.0.3&q=80&w=400`}
       />
+
+      {/* IMAGES */}
       <div
-        className={`w-3/4 h-auto my-3 rounded-md p-2 pl-2 overflow-scroll flex items-center  justify-start flex-wrap ${color.sidemainTailwind}`}
+        className={`w-3/4 h-44 my-3 rounded-md p-2 pl-2 flex items-center overflow-scroll  justify-center flex-col ${color.sidemainTailwind}`}
       >
         <h2
-          className={`w-3/4 font-bold text-lg h-10 overflow-hidden  ${color.sidemainTailwind} text-white  pl-9 flex justify-start items-center `}
+          className={`w-full font-bold text-xl h-[20%] overflow-hidden  ${color.sidemainTailwind} text-white  pl-9 flex justify-start items-center `}
         >
           Images
         </h2>
-        <div className={`w-full h-1/4 flex overflow-scroll pl-2 overflow `}>
+        <ul
+          className={`w-full flex items-center overflow-x-scroll justify-start h-full  pl-2 `}
+        >
           {imagearray.map((item, index) => {
             return (
               <>
-                <div
-                  alt="not found"
-                  style={{
-                    backgroundSize: "cover",
-                    backgroundImage: `url(
-                      "https://images.unsplash.com/photo-1682688759157-57988e10ffa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MzU4MDd8MXwxfGFsbHwxfHx8fHx8Mnx8MTcwNzM2NTg3N3w&ixlib=rb-4.0.3&q=80&w=400"
-                    )`,
-                  }}
-                  key={index * 3}
-                  className={`imghotel  w-1/4 mx-2 h-1/4  rounded-md bg-white `}
-                >
-                  <div
-                    className={`imgforpg  flex items-center text-white justify-center bg-black`}
-                  >
-                    {"Bedroom"}
-                  </div>
-                </div>
+                <img
+                  src={"/searchpagepic.jpg"}
+                  className={`w-1/4 h-[90%] bg-center bg-cover mx-2 rounded-md mt-2`}
+                />
               </>
             );
           })}
-        </div>
+        </ul>
       </div>
 
+      {/* DETAILS */}
       <ul
         className={`detailsul w-3/4 h-auto flex items-center  justify-center flex-wrap flex-row border border-spacing-1 border-gray-600`}
       >
@@ -109,6 +92,8 @@ function BookPage({ image, hotelname, price, rating, location }) {
         })}
       </ul>
 
+      {/* COMMENTS */}
+
       <div
         className={`w-3/4 h-auto flex items-center  justify-center flex-wrap flex-row overflow-scroll border border-spacing-1 border-gray-600`}
       >
@@ -142,7 +127,7 @@ function BookPage({ image, hotelname, price, rating, location }) {
       >
         Process For Booking
       </NavLink>
-    </motion.div>
+    </div>
   );
 }
 

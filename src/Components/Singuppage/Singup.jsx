@@ -10,7 +10,6 @@ function Singup() {
   console.log(authservice.createaccount);
   const navigate = useNavigate();
   const [loader, setloader] = useState(false);
-  const [focus, setfocus] = useState(1);
   const color = useSelector((state) => state.colors.userdata);
 
   const { register, handleSubmit } = useForm();
@@ -30,28 +29,16 @@ function Singup() {
     }
   };
 
-  setTimeout(() => {
-    document
-      .getElementById(
-        `${
-          (focus == 1 ? "username" : null,
-          focus == 2 ? "email" : null,
-          focus == 3 ? "password" : null)
-        }`
-      )
-      .focus();
-  }, 600);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className={`w-3/4 h-full pb-20 fixed  overflow-scroll right-0 flex items-center justify-center bg-white flex-row  `}
+      className={`w-full h-screen pt-40  overflow-scroll flex items-center justify-center bg-white flex-row  `}
     >
       <form
         onSubmit={handleSubmit(create)}
-        className={`w-3/4 h-auto ${color.sidemainTailwind} rounded-md flex items-center justify-start flex-col p-2 flex-wrap`}
+        className={`w-2/4 h-auto mb-20 ${color.sidemainTailwind} rounded-md flex items-center justify-start flex-col p-2 flex-wrap`}
       >
         <h2
           className={`w-full h-10 bg-gray-400 mb-10 rounded-sm text-xl text-white font-bold flex items-center justify-center `}
@@ -69,7 +56,6 @@ function Singup() {
           className={`w-3/4 h-10 p-2 border-none outline-none mb-3 ${color.BorderTailwind} rounded-sm`}
           label="Username: "
           placeholder="Enter your name"
-          onPointerEnter={() => setfocus((prev) => prev + 1)}
           {...register("name", { required: true })}
         />
 
@@ -83,7 +69,6 @@ function Singup() {
           className={`w-3/4 p-2 h-10 border-none outline-none mb-3 ${color.BorderTailwind} rounded-sm`}
           label="Email: "
           id="email"
-          onPointerEnter={() => setfocus((prev) => prev + 1)}
           placeholder="Enter your email"
           type="email"
           {...register("email", { required: true })}
@@ -98,7 +83,6 @@ function Singup() {
         <input
           className={`w-3/4 p-2 h-10 border-none outline-none mb-3 ${color.BorderTailwind} rounded-sm`}
           label="Password: "
-          onPointerEnter={() => setfocus((prev) => prev - 2)}
           placeholder="Enter your password"
           id="password"
           type="password"

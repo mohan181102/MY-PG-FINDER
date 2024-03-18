@@ -32,7 +32,7 @@ function BookProcess({ ProcessNumber, children, Bgcolor, LineColor, ref }) {
 
   return (
     <div
-      className={`w-3/4 h-full fixed top-0 right-0 flex  justify-center  items-center flex-col gap-1`}
+      className={`w-full h-full pt-40  overflow-scroll flex items-center justify-center bg-white flex-col `}
     >
       <ul
         className={`ul w-3/4 mt-10 h-1/4 flex justify-between items-center  `}

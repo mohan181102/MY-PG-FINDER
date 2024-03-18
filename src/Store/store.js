@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import colors from "./colors";
-
+import auth from "./auth";
 
 const store = configureStore({
     reducer:{
-        colors:colors 
+        colors:colors,
+        auth:auth 
     }
 })
 

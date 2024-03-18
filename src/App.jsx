@@ -5,10 +5,10 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div className=" min-w-screen max-w-max h-screen overscroll-scroll">
       <TopNavbar />
       <SideBar />
-      <Outlet/>
+      <Outlet />
     </div>
   );
 }

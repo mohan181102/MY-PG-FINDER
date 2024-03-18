@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -16,17 +16,21 @@ import { Provider } from "react-redux";
 import store from "./Store/store.js";
 import Setting from "./Components/Setting/Setting.jsx";
 import Singup from "./Components/Singuppage/Singup.jsx";
-
-const loginstatus = false;
+import Admin from "./Components/AdminPage/Admin.jsx";
 
 const route = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+
     children: [
       {
         path: "/",
-        element: loginstatus ? <Homepage /> : <Welcom />,
+        element: <Welcom />,
+      },
+      {
+        path: "/home",
+        element: <Homepage />,
       },
       {
         path: "/profile",
